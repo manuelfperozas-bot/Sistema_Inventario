@@ -1,0 +1,127 @@
+DROP SCHEMA IF EXISTS inventario;
+CREATE SCHEMA inventario;
+USE inventario;
+
+CREATE TABLE IF NOT EXISTS tipos (
+	ID_tipo int NOT NULL AUTO_INCREMENT,
+	tipo varchar(255) UNIQUE ,
+	PRIMARY KEY (ID_tipo)
+);
+
+CREATE TABLE IF NOT EXISTS producto (
+	ID int NOT NULL AUTO_INCREMENT,
+	nombre varchar(255),
+	ID_tipo int,
+	cantidad int,
+	PRIMARY KEY (ID),
+	FOREIGN KEY (ID_tipo) REFERENCES tipos(ID_tipo)
+);
+
+CREATE TABLE IF NOT EXISTS fechas (
+	ID int UNIQUE,
+	fecha_entrada DATETIME DEFAULT CURRENT_TIMESTAMP(),
+	fecha_madificacion DATETIME DEFAULT CURRENT_TIMESTAMP(),
+	PRIMARY KEY (ID),
+	FOREIGN KEY (ID) REFERENCES producto(ID)
+);
+
+create table if not exists precios (
+	ID int unique,
+	precio double,
+	primary key (ID),
+	FOREIGN key (ID) references producto(ID)
+);
+
+DELIMITER $$
+
+CREATE PROCEDURE agregar_producto(IN nombre varchar(255), ID_tipo int, cantidad int)
+BEGIN
+	INSERT INTO producto (nombre, ID_tipo, cantidad)
+	VALUES (nombre, ID_tipo, cantidad);
+END $$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE agregar_tipo(IN tipo varchar(255))
+BEGIN
+	INSERT INTO tipos (tipo)
+	VALUES (tipo);
+END $$
+
+DELIMITER ;
+
+DELIMITER $$
+
+create procedure asignar_precio(in ID int, precio double)
+begin
+	insert into precios (ID, precio)
+	values (ID, precio);
+end $$
+
+DELIMITER ;
+
+CREATE VIEW producto_tipo_catidad AS
+SELECT p.nombre, t.tipo , SUM(p.cantidad) AS Cantidad
+FROM tipos t
+JOIN producto p ON t.ID_tipo = p.ID_tipo
+GROUP BY p.nombre, t.tipo;
+
+DELIMITER $$
+
+CREATE TRIGGER fecha_ingreso
+AFTER INSERT ON producto
+FOR EACH ROW
+BEGIN
+	INSERT INTO fechas(ID)
+	VALUES (NEW.ID);
+END $$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE restar_cantidad(IN p_id INT, p_cant INT)
+BEGIN
+    UPDATE producto
+    SET cantidad = cantidad - p_cant
+    WHERE ID = p_id;
+END $$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE TRIGGER fecha_modificada
+AFTER UPDATE ON producto
+FOR EACH ROW
+BEGIN
+    UPDATE fechas
+    SET fecha_madificacion = CURRENT_TIMESTAMP()
+    WHERE ID = NEW.ID;
+END $$
+
+DELIMITER ;
+
+CREATE VIEW nombre_fecha AS
+SELECT p.nombre, f.fecha_entrada, f.fecha_madificacion, p.cantidad
+FROM producto p
+JOIN fechas f
+ON p.ID = f.ID;
+
+CREATE VIEW nombre_fecha_quedan AS
+SELECT p.nombre, f.fecha_entrada, f.fecha_madificacion, p.cantidad
+FROM producto p
+JOIN fechas f
+ON p.ID = f.ID
+WHERE p.cantidad > 0;
+
+CREATE VIEW nombre_fecha_no_quedan AS
+SELECT p.nombre, f.fecha_entrada, f.fecha_madificacion, p.cantidad
+FROM producto p
+JOIN fechas f
+ON p.ID = f.ID
+WHERE p.cantidad = 0;
+
+
