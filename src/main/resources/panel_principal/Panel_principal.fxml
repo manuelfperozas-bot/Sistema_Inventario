@@ -76,9 +76,10 @@
 
                 <TableView fx:id="tablaProductos" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                     <columns>
-                        <TableColumn fx:id="colNombre" prefWidth="326.40003967285156" text="Producto" />
-                        <TableColumn fx:id="colCategoria" prefWidth="150.0" text="Categoría" />
+                        <TableColumn fx:id="colNombre" prefWidth="312.79998475313187" text="Producto" />
+                        <TableColumn fx:id="colCategoria" prefWidth="189.60003662109375" text="Categoría" />
                         <TableColumn fx:id="colStock" prefWidth="100.0" text="Stock" />
+                  <TableColumn fx:id="colprecio" prefWidth="100.0" text="Precio" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
