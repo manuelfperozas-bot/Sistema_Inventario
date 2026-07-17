@@ -12,7 +12,8 @@ public class Conexion {
     public Conexion() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventario", Credenciales.Usuario,Credenciales.Contrasenia);
+            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventario",
+                    Credenciales.Usuario,Credenciales.Contraseña);
             System.out.println("Conexion establecida!");
         } catch (Exception e) {
             System.out.println("Error al conectar" + e);
@@ -32,13 +33,16 @@ public class Conexion {
         return res;
     }
 
-    public int RegistrarProducto(String nombre,int id_tipo,int cantidad){
+    public int RegistrarProducto(String nombre,int id_tipo,int cantidad,float precio){
         int res = 0;
         try {
-            ps = cn.prepareStatement("call agregar_producto(?,?,?)");
+            ps = cn.prepareStatement("call agregar_producto(?,?,?,?)");
             ps.setString(1,nombre);
             ps.setInt(2,id_tipo);
             ps.setInt(3,cantidad);
+            ps.setFloat(4,precio);
+            res = ps.executeUpdate();
+            System.out.println("Registro agregado exitosamente");
         } catch (Exception e){
             System.out.println("Error al agregar" + e);
         }
@@ -51,6 +55,8 @@ public class Conexion {
             ps = cn.prepareStatement("call restar_cantidad(?,?)");
             ps.setInt(1, id_producto);
             ps.setInt(2,cantidad);
+            res = ps.executeUpdate();
+            System.out.println("Cantidad restada exitosamente");
         }catch (Exception e){
             System.out.println("Error al restar" + e);
         }
@@ -67,8 +73,9 @@ public class Conexion {
                 String nombre = rs.getString("nombre");
                 String tipo = rs.getString("tipo");
                 int cantidad = rs.getInt("Cantidad");
+                float precio = rs.getFloat("precio");
 
-                productos.add(new Productos(nombre, tipo, cantidad));
+                productos.add(new Productos(nombre, tipo, cantidad, precio));
             }
 
             System.out.println("Listado Completado");
@@ -78,11 +85,29 @@ public class Conexion {
         return productos;
     }
 
+    public ArrayList<Tipos> ListaTipo(){
+        ArrayList<Tipos> tipos = new ArrayList<>();
+
+        try (PreparedStatement ps = cn.prepareStatement("select * from tipos");
+        ResultSet rs = ps.executeQuery()){
+            while(rs.next()){
+                int id_tipo = rs.getInt("ID_tipo");
+                String tipo = rs.getString("tipo");
+                tipos.add(new Tipos(id_tipo, tipo));
+            }
+
+        }catch (Exception e){
+            System.out.println("Error al listar" + e);
+        }
+
+        return tipos;
+    }
+
     public ArrayList<Productos> BuscarProductos(String buscar){
         ArrayList<Productos> productos = new ArrayList<>();
-        String sql = "SELECT * FROM producto_tipo_catidad WHERE nombre LIKE ? OR tipo LIKE ?";
 
-        try (PreparedStatement ps = cn.prepareStatement(sql)) {
+        try (PreparedStatement ps = cn.prepareStatement(
+                "SELECT * FROM producto_tipo_catidad WHERE nombre LIKE ? OR tipo LIKE ?")) {
 
             ps.setString(1, "%" + buscar + "%");
             ps.setString(2, "%" + buscar + "%");
@@ -92,10 +117,10 @@ public class Conexion {
                     String nombre = rs.getString("nombre");
                     String tipo = rs.getString("tipo");
                     int cantidad = rs.getInt("Cantidad");
+                    float precio = rs.getFloat("precio");
 
-                    productos.add(new Productos(nombre, tipo, cantidad));
+                    productos.add(new Productos(nombre, tipo, cantidad, precio));
                 }
-                System.out.println("Listado Completado");
             }
         } catch (Exception e){
             System.out.println("Error al listar " + e);

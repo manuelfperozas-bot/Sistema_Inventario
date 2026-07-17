@@ -1,0 +1,356 @@
+-- Insertar los 10 tipos de producto
+CALL agregar_tipo('Frutas y Verduras');   -- ID 1
+CALL agregar_tipo('Lácteos y Huevos');    -- ID 2
+CALL agregar_tipo('Panadería y Pastelería'); -- ID 3
+CALL agregar_tipo('Carnes y Embutidos');  -- ID 4
+CALL agregar_tipo('Abarrotes y Despensa'); -- ID 5
+CALL agregar_tipo('Bebidas y Jugos');     -- ID 6
+CALL agregar_tipo('Limpieza del Hogar');  -- ID 7
+CALL agregar_tipo('Cuidado Personal');   -- ID 8
+CALL agregar_tipo('Congelados');          -- ID 9
+CALL agregar_tipo('Snacks y Golosinas');  -- ID 10
+
+-- ==========================================
+-- CATEGORÍA 1: FRUTAS Y VERDURAS (ID_tipo: 1)
+-- ==========================================
+CALL agregar_producto('Manzana Gala Kg', 1, 45, 2.99);
+CALL agregar_producto('Plátano de Canarias Kg', 1, 80, 1.49);
+CALL agregar_producto('Naranja para Jugo Malla 2Kg', 1, 35, 3.80);
+CALL agregar_producto('Aguacate Hass Extra Kg', 1, 20, 5.50);
+CALL agregar_producto('Limón Persa Kg', 1, 60, 1.99);
+CALL agregar_producto('Fresa Bandeja 500g', 1, 15, 3.20);
+CALL agregar_producto('Arándanos Caja 125g', 1, 25, 2.49);
+CALL agregar_producto('Sandía Rayada Unidad', 1, 12, 4.99);
+CALL agregar_producto('Melón Cantaloupe Unidad', 1, 18, 3.50);
+CALL agregar_producto('Uva Roja Sin Semilla 500g', 1, 22, 2.89);
+CALL agregar_producto('Tomate Saladet Kg', 1, 70, 1.75);
+CALL agregar_producto('Cebolla Blanca Kg', 1, 65, 1.20);
+CALL agregar_producto('Papa Blanca Lavada Kg', 1, 90, 1.60);
+CALL agregar_producto('Zanahoria Suprema Kg', 1, 50, 0.99);
+CALL agregar_producto('Calabacita Italiana Kg', 1, 40, 1.85);
+CALL agregar_producto('Lechuga Orejona Unidad', 1, 30, 1.30);
+CALL agregar_producto('Espinaca Bolsa 250g', 1, 20, 1.65);
+CALL agregar_producto('Brócoli Neto Kg', 1, 25, 2.10);
+CALL agregar_producto('Pimiento Morrón Semáforo 3Pz', 1, 15, 3.99);
+CALL agregar_producto('Champiñón Entero Charola 250g', 1, 24, 2.25);
+CALL agregar_producto('Pepino Verde Kg', 1, 55, 1.15);
+CALL agregar_producto('Ajo Paquete 3 Unidades', 1, 40, 1.50);
+CALL agregar_producto('Cilantro Manojo', 1, 100, 0.50);
+CALL agregar_producto('Piña Miel Unidad', 1, 20, 2.99);
+CALL agregar_producto('Papaya Maradol Kg', 1, 14, 2.40);
+CALL agregar_producto('Mango Ataulfo Kg', 1, 33, 3.10);
+CALL agregar_producto('Kiwi Importado Kg', 1, 15, 4.80);
+CALL agregar_producto('Toronja Roja Kg', 1, 42, 1.35);
+CALL agregar_producto('Chile Jalapeño Kg', 1, 50, 1.90);
+CALL agregar_producto('Camote Amarillo Kg', 1, 28, 2.15);
+
+-- ==========================================
+-- CATEGORÍA 2: LÁCTEOS Y HUEVOS (ID_tipo: 2)
+-- ==========================================
+CALL agregar_producto('Leche Entera 1L', 2, 120, 1.50);
+CALL agregar_producto('Leche Descremada 1L', 2, 90, 1.60);
+CALL agregar_producto('Leche Deslactosada 1L', 2, 100, 1.75);
+CALL agregar_producto('Huevo Blanco Paquete 30Pz', 2, 45, 4.50);
+CALL agregar_producto('Huevo Rojo Orgánico 12Pz', 2, 20, 3.20);
+CALL agregar_producto('Queso Panela Fresco 400g', 2, 35, 3.85);
+CALL agregar_producto('Queso Manchego Rebanado 200g', 2, 50, 2.99);
+CALL agregar_producto('Queso Oaxaca Hebra 500g', 2, 28, 5.40);
+CALL agregar_producto('Queso Mozzarella Rallado 250g', 2, 40, 3.65);
+CALL agregar_producto('Mantequilla Con Sal 90g', 2, 85, 1.10);
+CALL agregar_producto('Mantequilla Sin Sal Premium 200g', 2, 45, 2.80);
+CALL agregar_producto('Yogurt Natural Sin Azúcar 1Kg', 2, 30, 3.99);
+CALL agregar_producto('Yogurt Griego Fresa 150g', 2, 75, 1.25);
+CALL agregar_producto('Yogurt Batido Coco 125g', 2, 80, 0.85);
+CALL agregar_producto('Crema Ácida Regular 450g', 2, 55, 2.10);
+CALL agregar_producto('Crema para Batir Lyncott 250ml', 2, 25, 3.15);
+CALL agregar_producto('Media Crema Cartón 250ml', 2, 90, 1.05);
+CALL agregar_producto('Queso Crema Original 190g', 2, 65, 2.20);
+CALL agregar_producto('Queso Gouda Maduro Kg', 2, 10, 14.50);
+CALL agregar_producto('Queso Parmesano Rallado 85g', 2, 40, 2.95);
+CALL agregar_producto('Flan de Vainilla Pack 4Pz', 2, 30, 2.50);
+CALL agregar_producto('Gelatina de Leche Rompope 150g', 2, 50, 0.95);
+CALL agregar_producto('Bebida Lactobacilos Casei 5 Pack', 2, 40, 3.10);
+CALL agregar_producto('Leche Condensada Lata 380g', 2, 70, 1.95);
+CALL agregar_producto('Leche Evaporada Lata 360g', 2, 85, 1.40);
+CALL agregar_producto('Queso Ricotta Tarrina 250g', 2, 15, 3.40);
+CALL agregar_producto('Yogurt Bebible Nuez 220g', 2, 100, 1.10);
+CALL agregar_producto('Margarin Vegetal tarrina 400g', 2, 48, 1.80);
+CALL agregar_producto('Leche de Almendras Original 1L', 2, 50, 2.99);
+CALL agregar_producto('Leche de Soya Vainilla 1L', 2, 35, 2.75);
+
+-- ==========================================
+-- CATEGORÍA 3: PANADERÍA Y PASTELERÍA (ID_tipo: 3)
+-- ==========================================
+CALL agregar_producto('Pan de Caja Blanco Grande', 3, 60, 2.80);
+CALL agregar_producto('Pan Integral con Granos Extra', 3, 45, 3.20);
+CALL agregar_producto('Pan Blanco Linaza y Chía', 3, 30, 3.50);
+CALL agregar_producto('Bollos para Hamburguesa 6Pz', 3, 40, 2.10);
+CALL agregar_producto('Pan para Hot Dog 8Pz', 3, 40, 1.95);
+CALL agregar_producto('Tortillas de Harina Grandes 10Pz', 3, 80, 1.60);
+CALL agregar_producto('Pan Pita Integral Paquete', 3, 25, 2.45);
+CALL agregar_producto('Baguette Parisina Paris', 3, 50, 1.20);
+CALL agregar_producto('Bolillo Calientito Unidad', 3, 200, 0.35);
+CALL agregar_producto('Pan Dulce Concha Vainilla', 3, 70, 0.90);
+CALL agregar_producto('Pan Dulce Cuernito Mantequilla', 3, 60, 0.95);
+CALL agregar_producto('Donas Azucaradas Pack 4Pz', 3, 25, 2.99);
+CALL agregar_producto('Mantecadas Caseras Pack 6Pz', 3, 35, 2.50);
+CALL agregar_producto('Pastel de Chocolate Mediano', 3, 8, 15.99);
+CALL agregar_producto('Pay de Limón Frío Extra', 3, 10, 9.50);
+CALL agregar_producto('Base para Tartas Horneada', 3, 15, 3.10);
+CALL agregar_producto('Galletas Polvorones Bolsa', 3, 45, 1.85);
+CALL agregar_producto('Pan Tostado Clásico Caja', 3, 50, 2.30);
+CALL agregar_producto('Croutones Ajo y Hierbas 150g', 3, 35, 1.99);
+CALL agregar_producto('Muffin de Arándanos Grande', 3, 30, 1.50);
+CALL agregar_producto('Orejas de Hojaldre Pack 4Pz', 3, 40, 2.20);
+CALL agregar_producto('Pan de Muerto Tradicional (Estación)', 3, 20, 1.80);
+CALL agregar_producto('Panettone Frutas Caja (Estación)', 3, 12, 8.99);
+CALL agregar_producto('Tarta de Santiago Caja', 3, 10, 12.40);
+CALL agregar_producto('Base Pizza Precocida 2Pz', 3, 30, 3.75);
+CALL agregar_producto('Masa Hojaldre Cruda 500g', 3, 20, 2.90);
+CALL agregar_producto('Bizcocho de Vainilla Casero', 3, 15, 4.50);
+CALL agregar_producto('Volovanes de Crema Pack 2Pz', 3, 24, 2.10);
+CALL agregar_producto('Churros Azúcar y Canela Pack 6Pz', 3, 18, 2.60);
+CALL agregar_producto('Pan de Centeno Rebanado', 3, 22, 3.80);
+
+-- ==========================================
+-- CATEGORÍA 4: CARNES Y EMBUTIDOS (ID_tipo: 4)
+-- ==========================================
+CALL agregar_producto('Bistec de Res Pulpa Blanca Kg', 4, 25, 12.99);
+CALL agregar_producto('Carne Molida de Res 90/10 Kg', 4, 30, 9.80);
+CALL agregar_producto('Rib Eye de Res Choice Kg', 4, 12, 24.50);
+CALL agregar_producto('Pechuga de Pollo Sin Hueso Kg', 4, 40, 7.90);
+CALL agregar_producto('Pollo Entero Limpio Kg', 4, 25, 4.20);
+CALL agregar_producto('Pierna y Muslo de Pollo Kg', 4, 45, 3.60);
+CALL agregar_producto('Milanesa de Cerdo Kg', 4, 28, 6.90);
+CALL agregar_producto('Chuleta de Cerdo Ahumada Kg', 4, 32, 7.45);
+CALL agregar_producto('Costilla de Cerdo San Luis Kg', 4, 15, 11.20);
+CALL agregar_producto('Carne de Pastor Preparada Kg', 4, 20, 8.50);
+CALL agregar_producto('Jamón de Pavo Virginia 250g', 4, 60, 2.99);
+CALL agregar_producto('Jamón Serrano Selección 100g', 4, 35, 5.80);
+CALL agregar_producto('Salchicha de Pavo Paquete 500g', 4, 70, 2.40);
+CALL agregar_producto('Salchicha para Asar con Queso 800g', 4, 30, 4.99);
+CALL agregar_producto('Tocino de Cerdo Ahumado 250g', 4, 50, 3.50);
+CALL agregar_producto('Chorizo de Cerdo Casero 200g', 4, 55, 1.95);
+CALL agregar_producto('Chorizo de Pavo Sanísimo 200g', 4, 40, 2.15);
+CALL agregar_producto('Salami Rebanado Especial 100g', 4, 45, 2.80);
+CALL agregar_producto('Mortadela con Pistache 250g', 4, 30, 2.10);
+CALL agregar_producto('Pechuga de Pavo Horneada 250g', 4, 40, 4.25);
+CALL agregar_producto('Carne para Hamburguesa Res 8Pz', 4, 25, 6.50);
+CALL agregar_producto('Longaniza de Res Suprema Kg', 4, 18, 7.90);
+CALL agregar_producto('Chicharrón de Cerdo Bolsa 100g', 4, 50, 2.30);
+# Continuación de Carnes y Embutidos...
+CALL agregar_producto('Suadero de Res Calidad Kg', 4, 15, 9.10);
+CALL agregar_producto('Mollejas de Pollo Frescas Kg', 4, 20, 2.80);
+CALL agregar_producto('Patas de Pollo Limpias Kg', 4, 15, 1.99);
+CALL agregar_producto('Pavo Entero Congelado Kg (Estación)', 4, 5, 6.80);
+CALL agregar_producto('Manteca de Cerdo Cubeta 1Kg', 4, 22, 3.20);
+CALL agregar_producto('Cecina de Res Artesanal Kg', 4, 12, 15.40);
+CALL agregar_producto('Salchichón Cerdo Tipo Italiano 300g', 4, 25, 3.99);
+
+-- ==========================================
+-- CATEGORÍA 5: ABARROTES Y DESPENSA (ID_tipo: 5)
+-- ==========================================
+CALL agregar_producto('Arroz Blanco Grano Largo 1Kg', 5, 150, 1.65);
+CALL agregar_producto('Frijol Negro Premium 1Kg', 5, 130, 2.20);
+CALL agregar_producto('Aceite Vegetal de Cocina 1L', 5, 200, 2.89);
+CALL agregar_producto('Aceite de Oliva Extra Virgen 750ml', 5, 60, 8.50);
+CALL agregar_producto('Azúcar Blanca Refinada 1Kg', 5, 110, 1.80);
+CALL agregar_producto('Azúcar Morena Estándar 1Kg', 5, 95, 1.55);
+CALL agregar_producto('Sal de Mesa Yodada 1Kg', 5, 180, 0.75);
+CALL agregar_producto('Sal de Mar Molino Especias 150g', 5, 45, 3.10);
+CALL agregar_producto('Harina de Trigo Todo Uso 1Kg', 5, 120, 1.30);
+CALL agregar_producto('Harina de Maíz Nixtamalizado 1Kg', 5, 140, 1.45);
+CALL agregar_producto('Pasta Spaguetti Clásico 200g', 5, 250, 0.65);
+CALL agregar_producto('Pasta Codo Mediano 200g', 5, 220, 0.65);
+CALL agregar_producto('Puré de Tomate Condimentado 210g', 5, 190, 0.80);
+CALL agregar_producto('Atún en Agua Lata 140g', 5, 300, 1.25);
+CALL agregar_producto('Atún en Aceite Lata 140g', 5, 250, 1.25);
+CALL agregar_producto('Sardinas en Salsa de Tomate 425g', 5, 80, 2.40);
+CALL agregar_producto('Mayonesa Real Limón 390g', 5, 90, 2.99);
+CALL agregar_producto('Salsa Ketchup Exprimible 400g', 5, 110, 1.95);
+CALL agregar_producto('Mostaza Tipo Americana 220g', 5, 85, 1.15);
+CALL agregar_producto('Chiles Jalapeños Escabeche Lata 380g', 5, 150, 1.40);
+CALL agregar_producto('Café Soluble Frasco 200g', 5, 75, 5.99);
+CALL agregar_producto('Café Tostado y Molido Gourmet 400g', 5, 40, 7.80);
+CALL agregar_producto('Té Negro Caja 20 Sobres', 5, 60, 1.90);
+CALL agregar_producto('Té Manzanilla Dulce 20 Sobres', 5, 80, 1.50);
+CALL agregar_producto('Cereal Trigo Integral Caja 400g', 5, 55, 3.65);
+CALL agregar_producto('Avena Natural en Hojuelas 400g', 5, 90, 1.40);
+CALL agregar_producto('Mermelada de Fresa Frasco 450g', 5, 65, 2.70);
+CALL agregar_producto('Miel de Abeja 100% Pura 300g', 5, 35, 4.50);
+CALL agregar_producto('Vinagre Blanco Destilado 1L', 5, 100, 1.10);
+CALL agregar_producto('Polvo para Hornear Lata 100g', 5, 50, 1.35);
+
+-- ==========================================
+-- CATEGORÍA 6: BEBIDAS Y JUGOS (ID_tipo: 6)
+-- ==========================================
+CALL agregar_producto('Agua Mineral Manantial 600ml', 6, 200, 0.90);
+CALL agregar_producto('Agua Purificada Botella 1.5L', 6, 300, 1.10);
+CALL agregar_producto('Agua Purificada Garrafón 20L', 6, 40, 3.50);
+CALL agregar_producto('Refresco Cola Botella 600ml', 6, 250, 1.25);
+CALL agregar_producto('Refresco Cola Familiar 2.5L', 6, 150, 2.80);
+CALL agregar_producto('Refresco Sabor Limón 2L', 6, 120, 2.20);
+CALL agregar_producto('Refresco Sabor Manzana 600ml', 6, 180, 1.25);
+CALL agregar_producto('Jugo de Naranja 100% Puro 1L', 6, 85, 2.10);
+CALL agregar_producto('Jugo de Manzana Clarificado 1L', 6, 70, 1.95);
+CALL agregar_producto('Néctar de Durazno Tetrapack 1L', 6, 90, 1.80);
+CALL agregar_producto('Bebida Energizante Lata 473ml', 6, 110, 2.99);
+CALL agregar_producto('Bebida Isotónica Atletas 500ml', 6, 130, 1.75);
+CALL agregar_producto('Cerveza Clara Lata 355ml', 6, 400, 1.40);
+CALL agregar_producto('Cerveza Obscura Artesanal 355ml', 6, 80, 2.85);
+CALL agregar_producto('Vino Tinto Crianza Botella 750ml', 6, 25, 12.50);
+CALL agregar_producto('Vino Blanco Esmeralda 750ml', 6, 20, 10.99);
+CALL agregar_producto('Té Frío Verde Limón Botella 500ml', 6, 95, 1.30);
+CALL agregar_producto('Bebida de Sábila Aloe Vera 500ml', 6, 60, 1.85);
+CALL agregar_producto('Agua de Coco Concentrada 1L', 6, 45, 3.20);
+CALL agregar_producto('Concentrado Jamaica Botella 1L', 6, 50, 2.90);
+CALL agregar_producto('Concentrado Horchata Botella 1L', 6, 50, 2.90);
+CALL agregar_producto('Polvo para Preparar Bebida Sabor Uva', 6, 300, 0.45);
+CALL agregar_producto('Polvo para Preparar Bebida Limón', 6, 300, 0.45);
+CALL agregar_producto('Soda Italiana Limonada Rosa 330ml', 6, 40, 2.15);
+CALL agregar_producto('Refresco de Jengibre Ginger Ale 4 Pack', 6, 35, 4.80);
+CALL agregar_producto('Agua Tónica Premium Botella', 6, 55, 1.60);
+CALL agregar_producto('Jugo de Tomate Preparado 1L', 6, 40, 2.65);
+CALL agregar_producto('Néctar de Mango Light 1L', 6, 75, 1.80);
+CALL agregar_producto('Malta Escocesa Bebida Sin Alcohol', 6, 30, 2.10);
+CALL agregar_producto('Bebida Carbonatada Sangría 2L', 6, 80, 2.35);
+
+-- ==========================================
+-- CATEGORÍA 7: LIMPIEZA DEL HOGAR (ID_tipo: 7)
+-- ==========================================
+CALL agregar_producto('Detergente Líquido Ropa Color 3L', 7, 50, 8.99);
+CALL agregar_producto('Detergente Polvo Multiusos 1Kg', 7, 85, 2.50);
+CALL agregar_producto('Suavizante de Telas Primavera 2.8L', 7, 45, 6.40);
+CALL agregar_producto('Cloro Blanqueador Desinfectante 2L', 7, 120, 1.80);
+CALL agregar_producto('Limpiador Líquido Pisos Lavanda 1L', 7, 140, 1.65);
+CALL agregar_producto('Lavatrastes Líquido Limón 750ml', 7, 95, 2.30);
+CALL agregar_producto('Lavatrastes Crema Axión 400g', 7, 70, 1.95);
+CALL agregar_producto('Limpiador Vidrios Antiempañante Extra', 7, 40, 2.85);
+CALL agregar_producto('Desengrasante Cocina Pulverizador 500ml', 7, 35, 3.50);
+CALL agregar_producto('Pastilla Desinfectante Tanque Baño 2Pz', 7, 80, 1.45);
+CALL agregar_producto('Limpiador Inodoros Gel Ácido 750ml', 7, 55, 2.99);
+CALL agregar_producto('Insecticida Aerosol Voladores 400ml', 7, 45, 4.20);
+CALL agregar_producto('Aromatizante Ambiental Aerosol Naranja', 7, 60, 2.60);
+CALL agregar_producto('Papel Higiénico Premium 12 Rollos', 7, 75, 5.50);
+CALL agregar_producto('Toallas de Cocina Papel Absorbente 2R', 7, 80, 2.10);
+CALL agregar_producto('Servilletas de Papel Paquete 400Pz', 7, 90, 2.75);
+CALL agregar_producto('Bolsas para Basura Grandes 30Pz', 7, 65, 3.20);
+CALL agregar_producto('Esponja Fibra Limpieza Cocina 3Pz', 7, 150, 1.30);
+CALL agregar_producto('Paño Microfibra Multiusos 2Pz', 7, 100, 2.15);
+CALL agregar_producto('Guantes de Látex Talla Mediana Par', 7, 85, 1.80);
+CALL agregar_producto('Limpia Muebles Madera Aerosol 250ml', 7, 30, 3.99);
+CALL agregar_producto('Destapacaños Líquido Gel Potente 1L', 7, 25, 4.60);
+CALL agregar_producto('Ácido Muriático Botella 1L', 7, 40, 1.50);
+CALL agregar_producto('Sosa Cáustica Escamas Bote 500g', 7, 20, 2.90);
+# Continuación de Limpieza del Hogar...
+CALL agregar_producto('Escoba Tradicional Cepillo Suave', 7, 30, 4.20);
+CALL agregar_producto('Trapeador Microfibra Mango Metal', 7, 25, 5.80);
+CALL agregar_producto('Recogedor de Basura Plástico Clip', 7, 25, 2.99);
+CALL agregar_producto('Líquido Lustrador de Calzado Negro', 7, 40, 1.75);
+CALL agregar_producto('Quita Manchas Textil Oxígeno Vivo 1L', 7, 35, 4.85);
+CALL agregar_producto('Quita Sarro Cerámicas Botella 1L', 7, 45, 2.60);
+
+-- ==========================================
+-- CATEGORÍA 8: CUIDADO PERSONAL (ID_tipo: 8)
+-- ==========================================
+CALL agregar_producto('Shampoo Control Caspa Profesional 400ml', 8, 55, 5.49);
+CALL agregar_producto('Acondicionador Brillo Sedoso 400ml', 8, 45, 4.99);
+CALL agregar_producto('Jabón Corporal Barra Tocador 150g', 8, 200, 0.95);
+CALL agregar_producto('Jabón Líquido Manos Antibacterial 500ml', 8, 70, 2.65);
+CALL agregar_producto('Crema Corporal Hidratación Humectante 400ml', 8, 50, 4.80);
+CALL agregar_producto('Crema Facial Antiarrugas Noche 50g', 8, 15, 12.90);
+CALL agregar_producto('Pasta Dental Protección Caries 100ml', 8, 120, 2.10);
+CALL agregar_producto('Enjuague Bucal Menta Glacial 500ml', 8, 65, 4.35);
+CALL agregar_producto('Cepillo Dental Cerdas Medias Paquete 2Pz', 8, 80, 2.99);
+CALL agregar_producto('Hilo Dental Esencia Menta 50m', 8, 90, 1.85);
+CALL agregar_producto('Desodorante Barra Hombre Invisible 50g', 8, 85, 3.20);
+CALL agregar_producto('Desodorante Aerosol Mujer 150ml', 8, 70, 3.80);
+CALL agregar_producto('Toallas Femeninas Flujo Abundante 10Pz', 8, 110, 2.45);
+CALL agregar_producto('Protectores Diarios Diarios Paquete 40Pz', 8, 60, 3.10);
+CALL agregar_producto('Rastrillo Desechable 3 Hojas 4Pz', 8, 65, 4.15);
+CALL agregar_producto('Espuma de Afeitar Piel Sensible 200ml', 8, 40, 3.50);
+CALL agregar_producto('Gel Fijador Extremo Cabello 500g', 8, 75, 2.20);
+CALL agregar_producto('Pañales Desechables Etapa 4 40Pz', 8, 30, 14.99);
+CALL agregar_producto('Toallitas Húmedas Bebé Sin Alcohol 80Pz', 8, 85, 2.30);
+CALL agregar_producto('Talco Corporal Desodorante 200g', 8, 50, 2.80);
+CALL agregar_producto('Cotonetes Plástico Algodón Bolsa 100Pz', 8, 130, 1.15);
+CALL agregar_producto('Protector Solar FPS 50+ Crema 150ml', 8, 25, 11.50);
+CALL agregar_producto('Gel Antibacterial Sanitizante Bolsillo 60ml', 8, 150, 0.99);
+CALL agregar_producto('Quitaesmalte Uñas Acetona Pura 100ml', 8, 60, 1.40);
+CALL agregar_producto('Algodón Absorbente Plisado Paquete 100g', 8, 70, 1.65);
+CALL agregar_producto('Loción Refrescante Post Afeitado 100ml', 8, 30, 5.20);
+CALL agregar_producto('Mascarilla Facial Hidratante Unidad', 8, 100, 1.50);
+CALL agregar_producto('Espejo de Bolsillo Doble Aumento', 8, 35, 2.10);
+CALL agregar_producto('Lima para Uñas Cartón Kit 3Pz', 8, 90, 0.95);
+CALL agregar_producto('Esponja Redonda Exfoliante Baño', 8, 55, 1.80);
+
+-- ==========================================
+-- CATEGORÍA 9: CONGELADOS (ID_tipo: 9)
+-- ==========================================
+CALL agregar_producto('Pizza Congelada Pepperoni Familiar', 9, 35, 6.99);
+CALL agregar_producto('Pizza Cuatro Quesos Horneable', 9, 25, 7.20);
+CALL agregar_producto('Papas Fritas Corte Recto Bolsa 1Kg', 9, 60, 3.50);
+CALL agregar_producto('Papas Gajo Sazonadas Bolsa 750g', 9, 45, 3.15);
+CALL agregar_producto('Nuggets de Pollo Caseros Bolsa 500g', 9, 55, 4.25);
+CALL agregar_producto('Hamburguesa Res Formada Caja 10Pz', 9, 30, 8.90);
+CALL agregar_producto('Deditos de Queso Mozzarella 400g', 9, 40, 4.99);
+CALL agregar_producto('Verduras Primavera Picadas Bolsa 1Kg', 9, 70, 2.40);
+CALL agregar_producto('Brócoli Floretes Congelados 500g', 9, 50, 1.85);
+CALL agregar_producto('Fresas Congeladas Enteras Bolsa 1Kg', 9, 25, 5.60);
+CALL agregar_producto('Frutos Rojos Mix Congelado 500g', 9, 30, 4.20);
+CALL agregar_producto('Helado de Vainilla Francesa Bote 1L', 9, 40, 4.50);
+CALL agregar_producto('Helado Trilogía Chocolate Bote 1L', 9, 35, 4.80);
+CALL agregar_producto('Paletas de Hielo Sabor Limón 6Pz', 9, 50, 2.99);
+CALL agregar_producto('Conos de Helado Cornetto Caja 4Pz', 9, 28, 3.99);
+CALL agregar_producto('Filete de Pescado Blanco Tilapia 1Kg', 9, 20, 9.50);
+# Continuación de Congelados...
+CALL agregar_producto('Salmón en Porciones Premium 400g', 9, 15, 14.80);
+CALL agregar_producto('Camarón Mediano Limpio Bolsa 500g', 9, 18, 11.20);
+CALL agregar_producto('Mejillones Media Concha Bolsa 500g', 9, 12, 6.90);
+CALL agregar_producto('Waffles Congelados Tostar Caja 8Pz', 9, 45, 2.85);
+CALL agregar_producto('Lasaña de Carne Precocinada 400g', 9, 20, 4.50);
+CALL agregar_producto('Canelones Espinaca y Ricotta 400g', 9, 15, 4.30);
+CALL agregar_producto('Arroz Chino Tres Delicias Listo 500g', 9, 30, 2.99);
+CALL agregar_producto('Burritos Frijol y Queso Pack 4Pz', 9, 40, 3.40);
+CALL agregar_producto('Masa para Galletas Congelada Chispas', 9, 25, 3.80);
+CALL agregar_producto('Hielo Purificado en Cubos Bolsa 5Kg', 9, 100, 1.99);
+CALL agregar_producto('Hielo Triturado Frappé Bolsa 3Kg', 9, 60, 1.70);
+CALL agregar_producto('Peperami Roll Congelado Horneable 2Pz', 9, 35, 2.50);
+CALL agregar_producto('Elote Dulce en Grano Bolsa 500g', 9, 50, 1.65);
+CALL agregar_producto('Gyoza de Cerdo Estilo Japonés Extra', 9, 22, 5.25);
+
+-- ==========================================
+-- CATEGORÍA 10: SNACKS Y GOLOSINAS (ID_tipo: 10)
+-- ==========================================
+CALL agregar_producto('Papas Fritas Saladas Bolsa Grande', 10, 100, 2.20);
+CALL agregar_producto('Botana Papas Queso y Chile Grande', 10, 95, 2.20);
+CALL agregar_producto('Nachos Totopos de Maíz Bolsa 400g', 10, 80, 2.50);
+CALL agregar_producto('Salsa de Queso para Nachos Frasco 300g', 10, 60, 2.99);
+CALL agregar_producto('Cacahuates Japoneses Salados Bolsa', 10, 120, 1.10);
+CALL agregar_producto('Cacahuate Tostado Con Sal Bolsa 200g', 10, 110, 1.35);
+CALL agregar_producto('Pistaches Tostados Con Sal Bolsa 150g', 10, 45, 4.80);
+CALL agregar_producto('Nuez de la India Horneada 100g', 10, 40, 3.99);
+CALL agregar_producto('Semillas de Girasol Tostadas Paquete', 10, 70, 1.20);
+CALL agregar_producto('Palomitas para Microondas Mantequilla 3Pz', 10, 85, 2.65);
+CALL agregar_producto('Palomitas Listas Caramelizadas Bolsa', 10, 50, 1.95);
+CALL agregar_producto('Galletas Chispas de Chocolate Caja', 10, 75, 2.40);
+CALL agregar_producto('Galletas Sándwich Crema Vainilla Paquete', 10, 90, 1.80);
+CALL agregar_producto('Barra de Chocolate de Leche Alpina 100g', 10, 130, 1.50);
+CALL agregar_producto('Chocolate Amargo 70% Cacao Extra 80g', 10, 60, 2.25);
+CALL agregar_producto('Bombones de Chocolate Caja Regalo', 10, 20, 6.99);
+CALL agregar_producto('Gomitas Sabor Frutas Ositos Bolsa', 10, 140, 1.30);
+CALL agregar_producto('Dulces Acidulados Surtidos Bolsa 500g', 10, 65, 3.20);
+CALL agregar_producto('Malvaviscos Blancos y Rosas Bolsa', 10, 80, 1.45);
+CALL agregar_producto('Barra de Cereal con Avena y Miel 6Pz', 10, 70, 2.80);
+CALL agregar_producto('Barrita Energetica Proteica Proteína 60g', 10, 100, 1.99);
+CALL agregar_producto('Chicles Menta Sin Azúcar Paquete 12Pz', 10, 200, 0.85);
+CALL agregar_producto('Pastillas Refrescantes Cereza Caja 1 Pz', 10, 150, 0.70);
+CALL agregar_producto('Paletas de Caramelo Macizo Macizas Pack', 10, 80, 2.10);
+CALL agregar_producto('Fruta Deshidratada Mango Enchiloso 100g', 10, 55, 2.60);
+CALL agregar_producto('Pasas Cubiertas de Chocolate Caja 120g', 10, 40, 1.95);
+CALL agregar_producto('Platanitos Fritos Crujientes Bolsa', 10, 65, 1.40);
+CALL agregar_producto('Chicharrones de Harina Bolsa Familiar', 10, 50, 1.80);
+CALL agregar_producto('Gofres de Caramelo Stroopwafels Pack', 10, 30, 3.40);
+CALL agregar_producto('Pretzels Salados Crujientes Bolsa', 10, 75, 1.99);
+
+select * from producto_tipo_catidad;

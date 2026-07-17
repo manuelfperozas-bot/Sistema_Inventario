@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS producto (
 	nombre varchar(255),
 	ID_tipo int,
 	cantidad int,
+	precio float,
 	PRIMARY KEY (ID),
 	FOREIGN KEY (ID_tipo) REFERENCES tipos(ID_tipo)
 );
@@ -25,19 +26,13 @@ CREATE TABLE IF NOT EXISTS fechas (
 	FOREIGN KEY (ID) REFERENCES producto(ID)
 );
 
-create table if not exists precios (
-	ID int unique,
-	precio double,
-	primary key (ID),
-	FOREIGN key (ID) references producto(ID)
-);
 
 DELIMITER $$
 
-CREATE PROCEDURE agregar_producto(IN nombre varchar(255), ID_tipo int, cantidad int)
+CREATE PROCEDURE agregar_producto(IN nombre varchar(255), ID_tipo int, cantidad int, precio float)
 BEGIN
-	INSERT INTO producto (nombre, ID_tipo, cantidad)
-	VALUES (nombre, ID_tipo, cantidad);
+	INSERT INTO producto (nombre, ID_tipo, cantidad, precio)
+	VALUES (nombre, ID_tipo, cantidad, precio);
 END $$
 
 DELIMITER ;
@@ -52,18 +47,8 @@ END $$
 
 DELIMITER ;
 
-DELIMITER $$
-
-create procedure asignar_precio(in ID int, precio double)
-begin
-	insert into precios (ID, precio)
-	values (ID, precio);
-end $$
-
-DELIMITER ;
-
 CREATE VIEW producto_tipo_catidad AS
-SELECT p.nombre, t.tipo , SUM(p.cantidad) AS Cantidad
+SELECT p.nombre, t.tipo , SUM(p.cantidad) AS Cantidad , avg(p.precio) as Precio
 FROM tipos t
 JOIN producto p ON t.ID_tipo = p.ID_tipo
 GROUP BY p.nombre, t.tipo;
@@ -123,5 +108,7 @@ FROM producto p
 JOIN fechas f
 ON p.ID = f.ID
 WHERE p.cantidad = 0;
+
+
 
 

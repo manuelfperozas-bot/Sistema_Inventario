@@ -1,5 +1,6 @@
 package front_end;
 
+import applicacion.App;
 import back_end.Conexion;
 import back_end.Precio_Dolar;
 import back_end.Productos;
@@ -13,6 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
@@ -20,7 +22,30 @@ public class Panel_principal_Controller {
 
     Precio_Dolar Dolar = new Precio_Dolar();
     Conexion cn = new Conexion();
-    ArrayList<Productos> productos = cn.ListaProductos();
+
+    @FXML
+    private void initialize() {
+
+        btnTasaBCV.setText(String.format("💵 BCV: %6.2f Bs.", Dolar.getPrecio()));
+
+        MostrarTabla();
+
+    }
+
+    public void MostrarTabla(){
+
+        ArrayList<Productos> productos = cn.ListaProductos();
+
+        ObservableList<Productos> observableProductos = FXCollections.observableArrayList(productos);
+
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colCategoria.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+        colStock.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
+        colprecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+
+        tablaProductos.setItems(observableProductos);
+
+    }
 
     @FXML
     private Button btnAgregar;
@@ -30,12 +55,6 @@ public class Panel_principal_Controller {
 
     @FXML
     private Button btnTasaBCV;
-
-    public void TasaBCV(){
-
-        btnTasaBCV.setText(String.format("💵 BCV: %6.2f Bs.", Dolar.getPrecio()));
-
-    }
 
     @FXML
     private TableColumn<Productos, String> colCategoria;
@@ -47,24 +66,21 @@ public class Panel_principal_Controller {
     private TableColumn<Productos, Integer> colStock;
 
     @FXML
+    private TableColumn<Productos, Float> colprecio;
+
+    @FXML
     private TableView<Productos> tablaProductos;
-
-    public void RellenarTabla(){
-
-        ObservableList<Productos> observableProductos = FXCollections.observableArrayList(productos);
-
-        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        colCategoria.setCellValueFactory(new PropertyValueFactory<>("tipo"));
-        colStock.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
-
-        tablaProductos.setItems(observableProductos);
-    }
 
     @FXML
     private TextField txtBuscar;
 
     @FXML
-    void btnAgregar(ActionEvent event) {
+    void btnAgregar(ActionEvent event) throws Exception {
+
+        btnAgregar.setDisable(true);
+        App.app.abrirAgregarProducto();
+        MostrarTabla();
+        btnAgregar.setDisable(false);
 
     }
 
@@ -101,10 +117,29 @@ public class Panel_principal_Controller {
     @FXML
     void txtBuscar_change(KeyEvent event) {
 
-        productos = cn.BuscarProductos(txtBuscar.getText());
-        RellenarTabla();
+        ArrayList<Productos> t_buscar = cn.BuscarProductos(txtBuscar.getText());
+        RellenarTabla(t_buscar);
 
     }
 
+    private void RellenarTabla(ArrayList<Productos> i) {
+
+        ObservableList<Productos> observableProductos = FXCollections.observableArrayList(i);
+
+        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        colCategoria.setCellValueFactory(new PropertyValueFactory<>("tipo"));
+        colStock.setCellValueFactory(new PropertyValueFactory<>("cantidad"));
+        colprecio.setCellValueFactory(new PropertyValueFactory<>("precio"));
+
+        tablaProductos.setItems(observableProductos);
+
+    }
+
+    private void cerrar() {
+
+        Stage stage = (Stage) btnAgregar.getScene().getWindow();
+        stage.close();
+
+    }
 
 }

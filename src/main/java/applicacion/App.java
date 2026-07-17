@@ -1,7 +1,6 @@
 package applicacion;
 
 import Utils.Paths;
-import front_end.Panel_principal_Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +9,8 @@ import javafx.stage.Stage;
 
 
 public class App extends Application {
+
+    public static App app;
 
     public static void main(String[] args) {
 
@@ -20,6 +21,8 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+        app = this;
+
         abrirPanelPrincipal();
 
     }
@@ -29,7 +32,37 @@ public class App extends Application {
 
         Parent pane = loader.load();
 
-        Panel_principal_Controller controller = loader.getController();
+        Scene scene = new Scene(pane);
+
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+
+        stage.show();
+
+    }
+
+    public void abrirAgregarProducto() throws Exception {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.AgregarProducto));
+
+        Parent pane = loader.load();
+
+        Scene scene = new Scene(pane);
+
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+
+        stage.showAndWait();
+
+    }
+
+    public void abrirAgregarTipo() throws Exception {
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(Paths.AgregarTipo));
+
+        Parent pane = loader.load();
 
         Scene scene = new Scene(pane);
 
@@ -39,9 +72,6 @@ public class App extends Application {
 
         stage.show();
 
-        controller.TasaBCV();
-
-        controller.RellenarTabla();
     }
 
 }
